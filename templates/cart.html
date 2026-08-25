@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>購物車</title>
+</head>
+
+<body>
+
+<h1>我的購物車</h1>
+
+{% for product in cart_products %}
+
+    <h2>{{ product.name }}</h2>
+
+    <p>價格：{{ product.price }} 元</p>
+
+{% endfor %}
+
+<br>
+
+<a href="/">回商品頁</a>
+
+</body>
+
+</html>

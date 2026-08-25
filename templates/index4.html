@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>簡單購物網站</title>
+
+    <style>
+        .products {
+            display: flex;
+            gap: 30px;
+        }
+
+        .product {
+            width: 220px;
+        }
+
+        .product img {
+            width: 200px;
+            height: 180px;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1>簡單購物網站</h1>
+
+<a href="/cart">查看購物車</a>
+
+<div class="products">
+
+{% for product in products %}
+
+    <div class="product">
+
+        <h2>{{ product.name }}</h2>
+
+        <img src="{{ url_for('static', filename=product.image) }}">
+
+        <p>價格：{{ product.price }} 元</p>
+
+        <a href="/add_cart/{{ product.id }}">
+            <button>加入購物車</button>
+        </a>
+
+    </div>
+
+{% endfor %}
+
+</div>
+
+</body>
+
+</html>

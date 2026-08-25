@@ -54,11 +54,13 @@ def cart():
     cart_ids=session.get('cart',[])
     #先設定購物車網頁為空
     cart_products=[]
+    total=0 ####
     
     for product_id in cart_ids:
         for product in products:
             if product['id']==product_id:    #如果有賣這個物品再加
                 cart_products.append((product))
+                total=total+product['price']####
     
         
  
